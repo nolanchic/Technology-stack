@@ -880,7 +880,7 @@ second
 * close：主要用来关闭channel
 * len：用来求长度，比如string、array、slice、map、channel
 * new：用来分配内存，主要用来分配值类型，比如int、struct。返回的是指针
-* make：用来分配内存，主要用来分配引用类型，比如chan、map、slice
+* make：用来分配内存，主要用来分配引用类型，比如chan、map、slice,返回的是类型
 * append：用来追加元素到数组、slice中
 * panic和recover：用来做错误处理
 
@@ -1008,6 +1008,7 @@ func main() {
  ```
  
  ### 闭包
+ 
  闭包：一个函数和与其相关的引用环境组合而成的实体
  
  ```
@@ -1485,7 +1486,35 @@ func test_RWlock(){
 
 ```
 
-####
+## Go中的struct
+1. 用来自定义复杂数据结构
+2. struct里面可以包含多个字段（属性）
+3. struct类型可以定义方法，注意和函数的区分
+4. struct类型是值类型
+5. struct类型可以嵌套
+6. Go语言没有class类型，只有struct类型
+
+#### struct的定义
+```
+
+type 标识符 struct {
+       field1 type
+       field2 type
+}
+
+
+例子:
+type Student struct {
+       Name string
+       Age int
+Score int
+}
+
+```
+
+
+
+
 
 
 
