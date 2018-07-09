@@ -1494,7 +1494,7 @@ func test_RWlock(){
 5. struct类型可以嵌套
 6. Go语言没有class类型，只有struct类型
 
-#### struct的定义
+#### 1.struct的定义
 ```
 
 type 标识符 struct {
@@ -1507,10 +1507,41 @@ type 标识符 struct {
 type Student struct {
        Name string
        Age int
-Score int
+		Score int
 }
+```
+
+
+#### 2. struct 中字段访问：和其他语言一样，使用点
 
 ```
+var stu Student
+
+stu.Name = “tony”
+stu.Age = 18
+stu.Score=20
+
+fmt.Printf(“name=%s age=%d score=%d”, 
+       stu.Name, stu.Age, stu.Score
+      
+
+```
+
+#### 3.  struct定义的三种形式：
+```
+var stu Student
+var stu *Student = new (Student)
+var stu *Student = &Student{}
+
+1）其中b和c返回的都是指向结构体的指针，访问形式如下：
+   
+a. stu.Name、stu.Age和stu.Score或者 (*stu).Name、(*stu).Age等
+```
+
+#### 4. struct的内存布局：struct中的所有字段在内存是连续的，布局如下：
+![](https://note.youdao.com/yws/public/resource/5978c86577f2382879467cc51562a46c/xmlnote/69BD54F248A04F198CC8B95B13477BBA/6007)
+
+
 
 
 
